@@ -15,6 +15,7 @@ void Damage(int* PlayerHp);
 /// <param name="hp">HP</param>
 void Heal(int* PlayerHp);
 
+
 /// <summary>
 /// ƒQ[ƒ€‚ğÀs‚·‚é
 /// </summary>

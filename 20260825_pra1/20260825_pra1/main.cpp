@@ -1,22 +1,8 @@
 #include<iostream>
-#include"Example.h"
-
+#include"Dog.h"
 using namespace std;
 
 int main(void)
 {
-	//プレイヤークラスを実体化
-	Example example;
-
-	example.hp = 100;
-	example.attack = 20;
-	example.playerX = 0;
-	example.playerY = 0;
-
-	example.Move();
-	example.Attack();
-	example.Damage(30);
-	void ShowStatus();
-
-	return 0;
+	
 }

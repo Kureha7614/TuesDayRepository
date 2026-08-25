@@ -9,5 +9,5 @@ Dog::Dog(string Name)
 
 void Dog :: ShowProfile()
 {
-	cout << "çŠ¬ã®åå‰ã¯" << name << "ã§ã™" << endl;
+	cout << "Œ¢‚Ì–¼‘O‚Í" << name << "‚Å‚·" << endl;
 }

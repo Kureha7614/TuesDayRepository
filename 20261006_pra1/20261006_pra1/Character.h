@@ -7,17 +7,33 @@ protected:
 	int defense;
 	int evasion;
 public:
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
 	Character();
 
-	//ステータス表示
+	/// <summary>
+	/// ステータス表示
+	/// </summary>
 	void ShowStatus();
-	//攻撃
+	/// <summary>
+	/// 攻撃
+	/// </summary>
+	/// <param name="target"></param>
 	void Attack(Character &target);
-	//回復
+	/// <summary>
+	/// 攻撃
+	/// </summary>
 	void Recovery();
-	//生存判定
+	/// <summary>
+	/// 生存判定
+	/// </summary>
+	/// <returns></returns>
 	bool IsAlive();
-	//HP取得
+	/// <summary>
+	/// HP取得
+	/// </summary>
+	/// <returns></returns>
 	int GetHp();
 };
 

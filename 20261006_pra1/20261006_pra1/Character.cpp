@@ -1,73 +1,81 @@
 #include "Character.h"
-#include"config.h"
+#include "Config.h"
 
-#include<iostream>
+#include <iostream>
 #include<cstdlib>
 
 using namespace std;
-// „Ç≥„É≥„Çπ„Éà„É©„ÇØ„Çø
+
+//ÉRÉìÉXÉgÉâÉNÉ^
 Character::Character()
 {
-	hp = config::MAX_HP;
+	hp = Config::MAX_HP;
 
-	attck = rand() % (config::MAX_STATUS - config::MIN_STATUS + 1) + config::MIN_STATUS;
-	defense = rand() % (config::MAX_STATUS - config::MIN_STATUS + 1) + config::MIN_STATUS;
-	evasion = rand() % (config::MAX_STATUS - config::MIN_STATUS + 1) + config::MIN_STATUS;
+	attck = rand() % (Config::MAX_STATUS - Config::MIN_STATUS + 1) + Config::MIN_STATUS;
+	defense = rand() % (Config::MAX_STATUS - Config::MIN_STATUS + 1) + Config::MIN_STATUS;
+	evasion = rand() % (Config::MAX_STATUS - Config::MIN_STATUS + 1) + Config::MIN_STATUS;
 }
-//„Çπ„ÉÜ„Éº„Çø„ÇπË°®Á§∫
+
+//ÉXÉeÅ[É^ÉXï\é¶
 void Character::ShowStatus()
 {
-	cout << "HP:" << hp << endl;
-	cout << "ÊîªÊíÉÂäõ:" << attck << endl;
-	cout << "Èò≤Âæ°Âäõ:" << defense << endl;
-	cout << "ÂõûÈÅøÁéá:" << evasion << endl;
+	cout << "HPÅF" << hp << endl;
+	cout << "çUåÇóÕÅF" << attck << endl;
+	cout << "ñhå‰óÕÅF" << defense << endl;
+	cout << "âÒîóÕÅF" << evasion << endl;
 }
-//ÊîªÊíÉ
-void Character::Attack(Character& target)
+//çUåÇ
+void Character::Attack(Character&target)
 {
-	//„É©„É≥„ÉÄ„É†„Å™ÊîªÊíÉÂÄ§
-	int randomValue = rand() % (config::MAX_RANDOM_VALUE - config::MIN_RANDOM_VALUE + 1) + config::MIN_RANDOM_VALUE;
+	//ÉâÉìÉ_ÉÄÇ»çUåÇíl
+	int randomValue = rand() % (Config::MAX_RANDOM_VALUE - Config::MIN_RANDOM_VALUE + 1) + Config::MIN_RANDOM_VALUE;
 	int attackValue = attck + randomValue;
-	cout << "ÊîªÊíÉÂÄ§„ÅØ" << attackValue << endl;
+	cout << "çUåÇílÇÕ" << attackValue << endl;
 
-	//ÂõûÈÅøÂà§ÂÆö
+	//âÒîîªíË
 	if (attackValue <= target.evasion)
 	{
-		cout << "ÊîªÊíÉ„ÇíÂõûÈÅø„Åï„Çå„Åü" << endl;
-		return;
+		cout << "çUåÇÇâÒîÇµÇ‹ÇµÇΩÅB" << endl;
+		cout << "É_ÉÅÅ[ÉWÇÕ0Ç≈Ç∑" << endl;
 	}
+	else
+	{
+		//É_ÉÅÅ[ÉWåvéZ
+		int damege = attackValue - target.defense;
 
-	//„ÉÄ„É°„Éº„Ç∏Ë®àÁÆó
-	int damege = attackValue - target.defense;
-	if (damege < 0)
-	{
-		damege = 0;
-	}
-	target.hp -= damege;
-	cout << "ÊîªÊíÉÊàêÂäüÔºÅ" <<"„ÉÄ„É°„Éº„Ç∏:" << damege << "„Åß„Åô" << endl;
-	//ÁîüÂ≠òÂà§ÂÆö
-	if (target.hp < config::DEAD_HP)
-	{
-		target.hp = 0;
+		if (damege < 0)
+		{
+			damege = 0;
+		}
+
+		target.hp -= damege;
+
+		cout << "çUåÇê¨å˜ÅI" << "É_ÉÅÅ[ÉW:" << damege << "ì_Ç≈Ç∑" << endl;
+
+		//ê∂ë∂îªíË
+		if (target.hp < Config::DEAD_HP)
+		{
+			target.hp = 0;
+		}
+
 	}
 }
 
 void Character::Recovery()
 {
-	int randomValue = rand() % (config::MAX_RANDOM_VALUE - config::MIN_RANDOM_VALUE + 1) + config::MIN_RANDOM_VALUE;
+	int randomValue = rand() % (Config::MAX_RANDOM_VALUE - Config::MIN_RANDOM_VALUE + 1) + Config::MIN_RANDOM_VALUE;
 	hp += randomValue;
 
-	if (hp > config::MAX_HP)
+	if (hp > Config::MAX_HP)
 	{
-		hp = config::MAX_HP;
+		hp = Config::MAX_HP;
 	}
-	cout << "HP„Çí" << randomValue << "ÂõûÂæ©„Åó„Åü" <<"ÁèæÂú®„ÅÆHPÔºö" << hp << endl;
+	cout << "HPÇ" << randomValue << "âÒïúÇµÇ‹ÇµÇΩÅB" << "åªç›ÇÃÇgÇoÅF" << hp << endl;
 }
 
 bool Character::IsAlive()
 {
-
-	return hp > config::DEAD_HP;
+	return hp > Config::DEAD_HP;
 }
 
 int Character::GetHp()

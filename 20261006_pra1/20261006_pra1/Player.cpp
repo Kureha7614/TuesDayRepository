@@ -1,34 +1,38 @@
 #include "Player.h"
-#include"config.h"
+#include "Config.h"
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-Player::Player() :Character()
-{
+//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+Player::Player() :Character() {}
 
-}
-/// ã·ã‚Œã„ã‚„ãƒ¼ã®è¡Œå‹•é¸æŠ
+//ƒvƒŒƒCƒ„[‚Ìs“®
 void Player::Action(Character& target)
 {
 	int choice;
 
-	cout << "\n{ã·ã‚Œã„ã‚„ãƒ¼ã®ã‚¿ãƒ¼ãƒ³}" << "1:æ”»æ’ƒ\n 2:å›å¾©\n" << ">>" << endl;
-
+	cout << "\nyƒvƒŒƒCƒ„[‚Ìƒ^[ƒ“z" << "1:UŒ‚\n2:‰ñ•œ\n" << ">>" << endl;
+	
 	while (true)
 	{
 		cin >> choice;
-		if(config::ACTION_ATTACK > choice || config::ACTION_RECOVERY < choice)
+		if (Config::ACTION_ATTACK > choice || Config::ACTION_RECOVERY < choice)
 		{
-			cout << "1ã‹2ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„" << endl;
-			continue;
-
+			cout << "•s³‚È”š‚ª“ü—Í‚³‚ê‚Ä‚¢‚Ü‚·BÄ“x“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B" << endl;
 		}
 		else
 		{
-				break;
+			break;
 		}
-    }
+	}
 
+	if (choice == Config::ACTION_ATTACK)
+	{
+		Attack(target);
+	}
+	else if (choice == Config::ACTION_RECOVERY)
+	{
+		Recovery();
+	}
 }

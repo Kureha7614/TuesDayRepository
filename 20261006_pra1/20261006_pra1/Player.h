@@ -1,17 +1,19 @@
 #pragma once
-#include "Character.h"
-class Player : public Character
+#include"Character.h"
+class Player:public Character
 {
 public:
+	
 	/// <summary>
-	/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	/// PlayerƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	/// </summary>
 	Player();
-
+	
 	/// <summary>
-	/// ã·ã‚Œã„ã‚„ãƒ¼ã®è¡Œå‹•é¸æŠ
+	/// ƒvƒŒƒCƒ„[‚Ìs“®‘I‘ğ
 	/// </summary>
-	/// <param name="target">å¯¾è±¡ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼</param>
+	/// <param name="target">‘ÎÛƒLƒƒƒ‰ƒNƒ^[</param>
 	void Action(Character& target);
+
 };
 

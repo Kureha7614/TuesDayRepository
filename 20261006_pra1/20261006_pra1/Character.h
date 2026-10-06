@@ -7,33 +7,34 @@ protected:
 	int defense;
 	int evasion;
 public:
-	/// <summary>
-	/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-	/// </summary>
-	Character();
 
 	/// <summary>
-	/// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡¨ç¤º
+	/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	/// </summary>
+	Character();
+	/// <summary> 
+	///ƒXƒe[ƒ^ƒX•\¦
 	/// </summary>
 	void ShowStatus();
 	/// <summary>
-	/// æ”»æ’ƒ
+	/// UŒ‚ƒƒ\ƒbƒh
 	/// </summary>
-	/// <param name="target"></param>
+	/// <param name="target">‘ÎÛ‚ÌƒLƒƒƒ‰ƒNƒ^[ƒIƒuƒWƒFƒNƒg</param>
 	void Attack(Character &target);
 	/// <summary>
-	/// æ”»æ’ƒ
+	/// ‰ñ•œƒƒ\ƒbƒh
 	/// </summary>
 	void Recovery();
 	/// <summary>
-	/// ç”Ÿå­˜åˆ¤å®š
+	/// ¶‘¶”»’èƒtƒ‰ƒO
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>¶‘¶”»’èƒtƒ‰ƒO</returns>
 	bool IsAlive();
 	/// <summary>
-	/// HPå–å¾—
+	///@HPæ“¾ 
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>HP</returns>
 	int GetHp();
+
 };
 

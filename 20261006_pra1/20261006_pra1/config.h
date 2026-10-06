@@ -1,20 +1,21 @@
 #pragma once
 
-namespace config
+namespace Config
 {
 	//HP
 	const int MAX_HP = 100;
-	//èƒ½åŠ›å€¤
+	//”\—Í’l
 	const int MIN_STATUS = 1;
 	const int MAX_STATUS = 20;
-	//æ”»æ’ƒãƒ»å›žå¾©ã®ãƒ©ãƒ³ãƒ€ãƒ å€¤
+	//UŒ‚E‰ñ•œŽž‚Ìƒ‰ƒ“ƒ_ƒ€’l
 	const int MIN_RANDOM_VALUE = 1;
 	const int MAX_RANDOM_VALUE = 12;
-	//ã·ã‚Œã„ã‚„ãƒ¼ã®è¡Œå‹•
+	//ƒvƒŒƒCƒ„[‚Ìs“®
 	const int ACTION_ATTACK = 1;
 	const int ACTION_RECOVERY = 2;
-	//æ•µã®è¡Œå‹•
+	//“G‚Ìs“®
 	const int ENEMY_ACTION_COUNT = 2;
-	//ã‚²ãƒ¼ãƒ çµ‚äº†
+	//ƒQ[ƒ€I—¹
 	const int DEAD_HP = 0;
+
 }

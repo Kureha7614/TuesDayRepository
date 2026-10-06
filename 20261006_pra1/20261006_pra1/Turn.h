@@ -1,22 +1,26 @@
 #pragma once
-#include"Enemy.h"
-#include"Player.h"
+
+#include "Player.h"
+#include "Enemy.h"
 class Turn
 {
 private:
 	Player* player;
 	Enemy* enemy;
 public:
+	
 	/// <summary>
-	/// ã‚¿ãƒ¼ãƒ³ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	/// ƒ^[ƒ“‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	/// </summary>
-	/// <param name="p">ã·ã‚Œã„ã‚„ãƒ¼ã®å†…å®¹</param>
-	/// <param name="e">æ•µã®å†…å®¹</param>
-	Turn(Player* p, Enemy* e);
+	/// <param name="p">ƒvƒŒƒCƒ„[“à—e</param>
+	/// <param name="e">“G‚Ì“à—e</param>
+	Turn(Player * p,Enemy*e);
 
 	/// <summary>
-	/// ã‚¿ãƒ¼ãƒ³ã®å®Ÿè¡Œ
+	/// ƒ^[ƒ“‚ÌÀs
 	/// </summary>
-	void Excute();
+	void Execute();
+	
+
 };
 

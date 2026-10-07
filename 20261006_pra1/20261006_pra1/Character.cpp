@@ -52,6 +52,9 @@ void Character::Attack(Character&target)
 
 		cout << "攻撃成功！" << "ダメージ:" << damege << "点です" << endl;
 
+		//ダメージ分のHPを減少させる
+		cout << "残りHP：" << target.hp << endl;
+
 		//生存判定
 		if (target.hp < Config::DEAD_HP)
 		{

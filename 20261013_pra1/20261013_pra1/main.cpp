@@ -6,9 +6,9 @@
 int main(void)
 {
 	//コンストラクタ
-	Player player;
-	Enemy enemy;
-	Boss boss;
+	Player player("やる気のない勇者");
+	Enemy enemy("やる気のないスライム");
+	Boss boss("やる気のないボス");
 	BattleManager manager;
 
 	manager.StartBattle(&player);

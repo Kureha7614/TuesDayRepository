@@ -12,9 +12,9 @@ int main(void)
 
 	vector<Enemy> enemies;
 	//“G‚Ì¶¬
-	enemies.push_back(Enemy(rand() % 70 + 30));
-	enemies.push_back(Enemy(rand() % 70 + 30));
-	enemies.push_back(Enemy(rand() % 70 + 30));
+	enemies.push_back(Enemy(rand() % 71 + 30));
+	enemies.push_back(Enemy(rand() % 71 + 30));
+	enemies.push_back(Enemy(rand() % 71 + 30));
 
 	//HPŠm”F
 	for (const Enemy& enemy: enemies)

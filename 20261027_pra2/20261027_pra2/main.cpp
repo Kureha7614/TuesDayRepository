@@ -39,8 +39,10 @@ int main(void)
 		}
 	}
 	cout << "‚ ‚È‚½‚Í" << Choice << "”Ô‚Ì“G‚ÉUŒ‚‚µ‚Ü‚µ‚½" << endl;
+
 	//UŒ‚‚Ì’lŒˆ’è
 	int damage = rand() % Max_Num + Min_Num;
+
 	//Damage‚ð—^‚¦‚é
 	enemies[Choice].Damage(damage);
 	enemies[Choice].GetHp();
@@ -48,16 +50,18 @@ int main(void)
 	{
 		enemy.ShowStatus();
 	}
+
 	//‚à‚µUŒ‚‚Å0ˆÈ‰º‚É‚È‚Á‚½‚ç
 	if (enemies[Choice].GetHp() <= MIN)
 	{
 		enemies.erase(enemies.begin() + Choice);
+		for (const Enemy& enemy : enemies)
+		{
+			enemy.ShowStatus();
+		}
+		cout << "“G‚Ì”‚Í" << enemies.size() << endl;
 	}
-	for (const Enemy& enemy : enemies)
-	{
-		enemy.ShowStatus();
-	}
-	cout << "“G‚Ì”‚Í" << enemies.size() << endl;
+	
 
 	return 0;
 }

@@ -3,6 +3,7 @@
 #include<ctime>
 #include<vector>
 #include"Enemy.h"
+#include"Config.h"
 using namespace std;
 
 int main(void)
@@ -22,9 +23,36 @@ int main(void)
 		enemy.ShowStatus();
 	}
 
-	//“G‚Ìíœ
-	enemies.erase(enemies.begin() + 0);
-	cout << "ˆê‘Ì”rœ‚µ‚Ü‚µ‚½" << endl;
+	int Choice;
+
+	cin >> Choice;
+	while (true)
+	{
+		if (Choice > MAX || Choice < MIN)
+		{
+			cout << "‚à‚¤ˆê‰ñ“ü—Í‚µ‚Ä‚Ë" << endl;
+			cin >> Choice;
+		}
+		else
+		{
+			break;
+		}
+	}
+	cout << "‚ ‚È‚½‚Í" << Choice << "”Ô‚Ì“G‚ÉUŒ‚‚µ‚Ü‚µ‚½" << endl;
+	//UŒ‚‚Ì’lŒˆ’è
+	int damage = rand() % Max_Num + Min_Num;
+	//Damage‚ğ—^‚¦‚é
+	enemies[Choice].Damage(damage);
+	enemies[Choice].GetHp();
+	for (const Enemy& enemy : enemies)
+	{
+		enemy.ShowStatus();
+	}
+	//‚à‚µUŒ‚‚Å0ˆÈ‰º‚É‚È‚Á‚½‚ç
+	if (enemies[Choice].GetHp() <= MIN)
+	{
+		enemies.erase(enemies.begin() + Choice);
+	}
 	for (const Enemy& enemy : enemies)
 	{
 		enemy.ShowStatus();

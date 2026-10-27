@@ -5,10 +5,12 @@ private:
 	//HP
 	int hp;
 public:
-	//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ï¼†ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^•ƒfƒXƒgƒ‰ƒNƒ^
 	Enemy(int hp);
 	~Enemy();
-	//ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡¨ç¤º
+	//ƒXƒe[ƒ^ƒX•\¦
 	void ShowStatus() const;
+	void Damage(int damege);
+	int GetHp() const;
 };
 

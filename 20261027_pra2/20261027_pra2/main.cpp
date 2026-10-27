@@ -50,7 +50,7 @@ int main(void)
 	{
 		enemy.ShowStatus();
 	}
-
+	cout << "\n" << endl;
 	//‚à‚µUŒ‚‚Å0ˆÈ‰º‚É‚È‚Á‚½‚ç
 	if (enemies[Choice].GetHp() <= MIN)
 	{
